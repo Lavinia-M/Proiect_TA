@@ -4,7 +4,7 @@ Testare automata a paginii de tip formular https://the-internet.herokuapp.com
 
 Design folosit: libraria unit test
 
-Link de import git clone: 
+Link de import git clone: https://github.com/Lavinia-M/Proiect_TA.git
 
 Librariile necesare de instalat pentru rularea proiectului:
 pip install selenium ,
