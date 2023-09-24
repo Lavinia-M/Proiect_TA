@@ -1,6 +1,6 @@
 ## Proiect Testare Automata
 ### Sumar informatii proiect 
-Testare automata a paginii de tip formular https://the-internet.herokuapp.com
+Testare automata a paginii https://the-internet.herokuapp.com
 
 Design folosit: libraria unit test
 
