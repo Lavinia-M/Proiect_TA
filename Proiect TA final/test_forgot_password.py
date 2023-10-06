@@ -1,5 +1,3 @@
-import time
-
 from selenium import webdriver
 from unittest import TestCase
 from selenium.webdriver.common.by import By
@@ -16,7 +14,7 @@ class ForgotPassword(TestCase):
         self.browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         self.browser.get(self.BASE_URL)
         self.browser.maximize_window()
-        self.browser.implicitly_wait(10)
+        self.browser.implicitly_wait(5)
         forgot_pass_link = self.browser.find_element(*self.FORGOT_PASS_SELECTOR)
         forgot_pass_link.click()
 
@@ -31,4 +29,4 @@ class ForgotPassword(TestCase):
         expected = "Internal Server Error"
         self.assertTrue(expected in error)
         self.browser.implicitly_wait(3)
-        time.sleep(2)
+        
