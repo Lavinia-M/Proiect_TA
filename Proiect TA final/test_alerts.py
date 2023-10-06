@@ -18,7 +18,7 @@ class Alerts(TestCase):
         self.browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         self.browser.get(self.JAVASCRIPT_ALERTS_URL)
         self.browser.maximize_window()
-        self.browser.implicitly_wait(10)
+        self.browser.implicitly_wait(5)
 
     def tearDown(self) -> None:
         self.browser.quit()
@@ -29,7 +29,6 @@ class Alerts(TestCase):
 
         alert_window = self.browser.switch_to.alert
         alert_window.accept()
-        time.sleep(2)
 
         result = self.browser.find_element(*self.RESULT_SELECTOR)
         assert result.text == "You successfully clicked an alert"
@@ -40,7 +39,6 @@ class Alerts(TestCase):
 
         confirm_window = self.browser.switch_to.alert
         confirm_window.accept()
-        time.sleep(2)
 
         result = self.browser.find_element(*self.RESULT_SELECTOR)
         assert result.text == "You clicked: Ok"
@@ -51,7 +49,6 @@ class Alerts(TestCase):
 
         confirm_window = self.browser.switch_to.alert
         confirm_window.dismiss()
-        time.sleep(2)
 
         result = self.browser.find_element(*self.RESULT_SELECTOR)
         assert result.text == "You clicked: Cancel"
@@ -63,7 +60,6 @@ class Alerts(TestCase):
         prompt_window = self.browser.switch_to.alert
         prompt_window.send_keys("Hello! Welcome to our website!")
         prompt_window.accept()
-        time.sleep(2)
 
         result = self.browser.find_element(*self.RESULT_SELECTOR)
         assert result.text == "You entered: Hello! Welcome to our website!"
@@ -74,7 +70,6 @@ class Alerts(TestCase):
 
         prompt_window = self.browser.switch_to.alert
         prompt_window.dismiss()
-        time.sleep(2)
 
         result = self.browser.find_element(*self.RESULT_SELECTOR)
         assert result.text == "You entered: null"
