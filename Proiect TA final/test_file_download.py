@@ -15,7 +15,7 @@ class FileDownload(TestCase):
         self.browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         self.browser.get(self.BASE_URL)
         self.browser.maximize_window()
-        self.browser.implicitly_wait(10)
+        self.browser.implicitly_wait(5)
         file_download_link = self.browser.find_element(*self.FILE_DOWNLOAD_SELECTOR)
         file_download_link.click()
 
@@ -25,16 +25,12 @@ class FileDownload(TestCase):
     def test_download_files(self):
         file_1 = self.browser.find_element(By.XPATH, '//*[@id="content"]/div/a[2]')
         file_1.click()
-        time.sleep(2)
 
         file_2 = self.browser.find_element(By.XPATH, '//*[@id="content"]/div/a[7]')
         file_2.click()
-        time.sleep(2)
 
         file_3 = self.browser.find_element(By.XPATH, '//*[@id="content"]/div/a[11]')
         file_3.click()
-        time.sleep(2)
 
         file_4 = self.browser.find_element(By.XPATH, '//*[@id="content"]/div/a[21]')
         file_4.click()
-        time.sleep(2)
