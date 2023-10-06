@@ -1,2 +1,0 @@
-2023-10-06 12:54:27.216240 : 
-                              The secret password is [SuperSecretPassword!].
