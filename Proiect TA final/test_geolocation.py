@@ -23,4 +23,7 @@ class Geolocation(TestCase):
     def test_where_am_i(self):
         self.browser.find_element(By.TAG_NAME, 'button').click()
         self.browser.find_element(By.ID, "map-link").click()
+        latitude = self.browser.find_element(By.ID, 'lat-value').text
+        longitude = self.browser.find_element(By.ID, 'long-value').text
+        assert type(latitude) and type(longitude) == str
 
