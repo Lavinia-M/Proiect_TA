@@ -28,5 +28,5 @@ class ForgotPassword(TestCase):
         error = self.browser.find_element(by=By.XPATH, value="/html/body/h1").text
         expected = "Internal Server Error"
         self.assertTrue(expected in error)
-        self.browser.implicitly_wait(3)
+        
         
